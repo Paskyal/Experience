@@ -31,15 +31,11 @@ table 50100 "Ext Global"
         {
             DataClassification = CustomerContent;
             Caption = 'Field No';
-            trigger OnWhat()
-            var
-    var
-    begin
-        n
+            trigger OnLookup()
+            begin
 
-    end;
-
-
+            end;
+        }
     }
     keys
     {
