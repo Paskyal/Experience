@@ -1,12 +1,12 @@
 page 50100 "Ext Global"
 {
-    
+
     ApplicationArea = All;
     Caption = 'Ext Global';
     PageType = List;
     SourceTable = "Ext Global";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)
@@ -36,5 +36,5 @@ page 50100 "Ext Global"
             }
         }
     }
-    
+
 }
