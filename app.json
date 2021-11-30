@@ -1,0 +1,28 @@
+{
+  "id": "e7cc32b8-76f0-4a0b-84c9-045b2ee3ff00",
+  "name": "Experience",
+  "publisher": "Pasha Panchenko",
+  "version": "1.0.0.0",
+  "brief": "Testing area",
+  "description": "Testing area",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "19.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [{
+      "from": 50100,
+      "to": 50149
+  }],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "8.0",
+  "target": "Cloud"
+}
