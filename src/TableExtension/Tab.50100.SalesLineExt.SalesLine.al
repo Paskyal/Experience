@@ -1,27 +1,19 @@
 tableextension 50100 "Sales Line Ext" extends "Sales Line"
 {
-    trigger OnAfterInsert()
-    begin
-        CheckDuplicateRecords();
-    end;
-
-    trigger OnAfterModify()
-    begin
-        CheckDuplicateRecords();
-    end;
-
-    local procedure CheckDuplicateRecords()
+    procedure FindRelatedSalesLines(SalesLine: Record "Sales Line")
     var
-        SalesLineRec: Record "Sales Line";
-        MyNo: Code[20];
-        MyType: Enum "Sales Line Type";
-        I: Integer;
+        _SalesLine: Record "Sales Line";
     begin
-        I := 0;
-        if SalesLineRec.FindSet() then
+        _SalesLine.SetRange("Document Type", "Document Type");
+        _SalesLine.SetRange("Document No.", "Document No.");
+        _SalesLine.SetRange(Type, SalesLine.Type);
+        _SalesLine.SetRange("No.", SalesLine."No.");
+        _SalesLine.SetFilter("Line No.", '<>%1', SalesLine."Line No.");
+        if _SalesLine.FindSet() then
             repeat
-                MyNo := SalesLineRec."No.";
-                MyType := SalesLineRec.Type;
-            until SalesLineRec.Next() = 0;
+                SalesLine.Validate(Quantity, SalesLine.Quantity + _SalesLine.Quantity);
+                SalesLine.Modify();
+                _SalesLine.Delete(true);
+            until Next() = 0;
     end;
 }

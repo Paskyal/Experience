@@ -42,11 +42,6 @@ table 50100 "Ext Global"
             Clustered = true;
         }
     }
-
     var
         ExtGlobalMgt: Codeunit "Ext Global Mgt";
-
-
-
-
 }
